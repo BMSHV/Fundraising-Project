@@ -1,0 +1,5 @@
+package com.springboot.sprint1.exception;
+
+public class UserNotFoundException {
+
+}

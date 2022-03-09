@@ -1,0 +1,57 @@
+package com.springboot.sprint1module2.service;
+
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+
+import com.springboot.sprint1.model.Post;
+import com.springboot.sprint1.repository.PostRepository;
+import com.springboot.sprint1.service.PostService;
+import com.springboot.sprint1.service.PostServiceImpl;
+import com.springboot.sprint1.util.EntityModelUtil;
+
+@SpringBootTest(classes = PostServiceTest.class)
+public class PostServiceTest {
+
+	@InjectMocks
+	private PostService postService = new PostServiceImpl();
+
+	@Mock
+	private PostRepository postRepository;
+	
+	
+	@Test
+	public void testCreatePost() {
+		
+		Post post1 = new Post();
+		
+		post1.setCategoryName("Medical");
+		post1.setDonorId(1);
+		post1.setFundCollected(4000);
+		post1.setFundNeeded(1000);
+		post1.setPostDate(LocalDate.now());
+		post1.setPostId(1);
+		post1.setUserDescription("Cancer");
+		post1.setUserId(1);
+		
+		when(postRepository.save(EntityModelUtil.postModelToEntity(post1))).thenReturn(EntityModelUtil.postModelToEntity(post1));
+        Post newPost = postService.createPost(post1);
+		
+        
+		//assertEquals(product.getProductName(), newProduct.getProductName());
+		
+		verify(postRepository,times(1)).save(EntityModelUtil.postModelToEntity(post1));
+		
+				
+		
+	}
+
+}

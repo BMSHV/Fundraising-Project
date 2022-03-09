@@ -1,0 +1,12 @@
+package com.abc.usersprint.service;
+
+import com.abc.usersprint.model.Details;
+import com.abc.usersprint.model.User;
+
+public interface UserService {
+	
+	public User addUser(User user);
+	
+	public Details getUserById(int userId);
+
+}

@@ -1,0 +1,16 @@
+package com.springboot.sprint1.service;
+
+import com.springboot.sprint1.model.AllDetails;
+import com.springboot.sprint1.model.Post;
+
+public interface PostService {
+	
+	public Post createPost(Post post);
+	
+	public AllDetails getPostById(int postId);
+	
+	public void deletePost(int userId);
+	
+	public Post updatePost(Post post);
+
+}

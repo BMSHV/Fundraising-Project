@@ -1,0 +1,5 @@
+package com.abc.usersprint.model;
+
+public class Category {
+
+}

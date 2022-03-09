@@ -1,0 +1,18 @@
+server.port=8101
+
+spring.datasource.url = jdbc:postgresql://localhost:5432/mydb
+spring.datasource.username = harsha
+spring.datasource.password = harsha123
+spring.jpa.hibernate.ddl-auto = update
+
+server.servlet.context-path=/sprint1
+spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+
+management.endpoints.web.exposure.include= *
+
+spring.application.name=post-service
+
+
+hystrix.dashboard.proxy-stream-allow-list=localhost
+
+

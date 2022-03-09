@@ -1,0 +1,87 @@
+package com.springboot.sprint1.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springboot.sprint1.entity.PostEntity;
+import com.springboot.sprint1.exception.PostNotFoundException;
+import com.springboot.sprint1.model.AllDetails;
+import com.springboot.sprint1.model.Donor;
+import com.springboot.sprint1.model.Post;
+import com.springboot.sprint1.model.User;
+import com.springboot.sprint1.repository.PostRepository;
+import com.springboot.sprint1.util.EntityModelUtil;
+
+@Service
+public class PostServiceImpl implements PostService {
+	
+	@Autowired
+	private PostRepository postRepository;
+
+	@Autowired
+	private UserService userService;
+	
+	@Autowired
+	private DonorService donorService;
+	
+	@Autowired
+	private CategoryService categoryService;
+	
+	@Override
+	public Post createPost(Post post) {
+		
+		PostEntity postEntity = postRepository.save(EntityModelUtil.postModelToEntity(post));
+		return EntityModelUtil.postEntityToModel(postEntity);
+		
+			}
+
+	@Override
+	public Post getPostById(int userId) throws PostNotFoundException{
+		
+		//AllDetails allDetails = new AllDetails();
+		
+		Optional<PostEntity> optionalPost = postRepository.findById(userId);
+		
+		if(optionalPost.isEmpty()) {
+			throw new PostNotFoundException("Sorry ! User is not available with id :" +userId);
+			
+		}
+		
+		return EntityModelUtil.postEntityToModel(optionalPost.get());
+	}
+
+	@Override
+	public void deletePost(int userId) {
+		
+		Optional<PostEntity> optionalPostEntity = postRepository.findById(userId);
+		
+		if(optionalPostEntity.isPresent()) {
+			postRepository.deleteById(userId);
+		}
+		
+		else {
+			throw new PostNotFoundException("Sorry ! User is not available with id :" +userId);
+		}
+		
+	}
+
+	@Override
+	public Post updatePost(Post post) {
+		
+		
+		Optional<PostEntity> optionalPostEntity = postRepository.findById(post.getUserId());
+		
+		if(optionalPostEntity.isEmpty()) {
+			
+			throw new PostNotFoundException("Sorry ! User is not available with id :" +post.getUserId());
+		}
+		
+		PostEntity updatedPost = postRepository.save(EntityModelUtil.postModelToEntity(post));
+		
+		return EntityModelUtil.postEntityToModel(updatedPost);
+	    
+	}
+
+}

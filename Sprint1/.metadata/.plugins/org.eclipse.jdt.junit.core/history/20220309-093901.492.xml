@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PostServiceTest" project="PostSprint1" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.springboot.sprint1module2.service.PostServiceTest" time="0.062" displayname="PostServiceTest" uniqueid="[engine:junit-jupiter]/[class:com.springboot.sprint1module2.service.PostServiceTest]">
+    <testcase name="testGetPostByIdNotFound" classname="com.springboot.sprint1module2.service.PostServiceTest" time="0.03" displayname="testGetPostByIdNotFound()" uniqueid="[engine:junit-jupiter]/[class:com.springboot.sprint1module2.service.PostServiceTest]/[method:testGetPostByIdNotFound()]"/>
+    <testcase name="testGetPostDetails" classname="com.springboot.sprint1module2.service.PostServiceTest" time="0.012" displayname="testGetPostDetails()" uniqueid="[engine:junit-jupiter]/[class:com.springboot.sprint1module2.service.PostServiceTest]/[method:testGetPostDetails()]"/>
+    <testcase name="testCreatePost" classname="com.springboot.sprint1module2.service.PostServiceTest" time="0.005" displayname="testCreatePost()" uniqueid="[engine:junit-jupiter]/[class:com.springboot.sprint1module2.service.PostServiceTest]/[method:testCreatePost()]"/>
+    <testcase name="testDeletePost" classname="com.springboot.sprint1module2.service.PostServiceTest" time="0.007" displayname="testDeletePost()" uniqueid="[engine:junit-jupiter]/[class:com.springboot.sprint1module2.service.PostServiceTest]/[method:testDeletePost()]"/>
+  </testsuite>
+</testrun>

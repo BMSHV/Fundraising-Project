@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.abc.fundraising.model.Category"/>
+    <fullyQualifiedTypeName name="com.abc.fundraising.model.User"/>
+    <fullyQualifiedTypeName name="com.abc.fundraising.model.Donor"/>
+    <fullyQualifiedTypeName name="com.abc.fundraising.model.Post"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,21 @@
+package com.abc.fundraising.service;
+
+import java.util.List;
+
+
+import com.abc.fundraising.model.Admin;
+import com.abc.fundraising.model.AdminDetails;
+
+public interface AdminService {
+		
+	public AdminDetails getAdminById(int adminId);
+			
+	public void deleteAdmin(int adminId);
+
+	public Admin saveAdmin(Admin admin);
+	
+	public Admin updateAdmin(Admin admin);
+
+	public List<Admin> getAllAdmins();
+
+}

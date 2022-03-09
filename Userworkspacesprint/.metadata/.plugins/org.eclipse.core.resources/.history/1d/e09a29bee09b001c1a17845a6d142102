@@ -1,0 +1,22 @@
+package com.abc.usersprint.model;
+
+public class Category {
+	
+	private int causeId;
+	private String categoryName;
+	public int getCauseId() {
+		return causeId;
+	}
+	public void setCauseId(int causeId) {
+		this.causeId = causeId;
+	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	
+	
+
+}

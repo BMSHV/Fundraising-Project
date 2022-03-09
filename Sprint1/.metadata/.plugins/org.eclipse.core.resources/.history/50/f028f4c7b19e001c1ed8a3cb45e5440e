@@ -1,0 +1,117 @@
+package com.springboot.sprint1.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+@Entity
+@Table(name = "post_tbl")
+public class PostEntity {
+	
+	@Id
+	@Column(name = "postId")
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	//@ApiModelProperty(notes = "Id of the post",name = "postId",required=true,value="Auto generated")
+	private int postId;
+	
+	@Column(name = "userId")
+	//@ApiModelProperty(notes = "Id of the user",name = "userId",required=true)
+	private int userId;
+	
+	@Column(name = "donorId")
+	//@ApiModelProperty(notes = "Id of the donor",name = "donorId",required=true)
+	private int donorId;
+	
+	@Column(name = "postDate")
+	//@ApiModelProperty(notes = "Date of the post created",name = "postDate",required=true)
+	private LocalDate postDate;
+	
+	@Column(name = "categoryName")
+	//@ApiModelProperty(notes = "Name of the category",name = "categoryName",required=true)
+	private String categoryName;
+	
+	@Column(name = "userDescription")
+	//@ApiModelProperty(notes = "Description for the cause given by user",name = "userDescription",required=true)
+	private String userDescription;
+	
+	@Column(name = "fundNeeded")
+	//@ApiModelProperty(notes = "Fund amount needed by user",name = "Fundneeded",required=true)
+	private float fundNeeded;
+	
+	@Column(name = "fundCollected")
+	private float fundCollected;
+
+	public float getFundCollected() {
+		return fundCollected;
+	}
+
+	public void setFundCollected(float fundCollected) {
+		this.fundCollected = fundCollected;
+	}
+
+	public int getPostId() {
+		return postId;
+	}
+
+	public void setPostId(int postId) {
+		this.postId = postId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public int getDonorId() {
+		return donorId;
+	}
+
+	public void setDonorId(int donorId) {
+		this.donorId = donorId;
+	}
+
+	public LocalDate getPostDate() {
+		return postDate;
+	}
+
+	public void setPostDate(LocalDate postDate) {
+		this.postDate = postDate;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public String getUserDescription() {
+		return userDescription;
+	}
+
+	public void setUserDescription(String userDescription) {
+		this.userDescription = userDescription;
+	}
+
+	public float getFundNeeded() {
+		return fundNeeded;
+	}
+
+	public void setFundNeeded(float fundNeeded) {
+		this.fundNeeded = fundNeeded;
+	}
+
+
+
+}

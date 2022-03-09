@@ -1,0 +1,5 @@
+package com.springboot.sprint1module2;
+
+public class SpringFoxConfig {
+
+}

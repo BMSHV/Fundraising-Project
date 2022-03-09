@@ -1,0 +1,49 @@
+package com.springboot.sprint1.model;
+
+import com.springboot.sprint1.entity.PostEntity;
+
+public class AllDetails {
+	
+	private PostEntity postEntity;
+	
+	private User user;
+	
+	private Donor donor;
+	
+	private Category category;
+
+	public PostEntity getPost() {
+		return postEntity;
+	}
+
+	public void setPost(PostEntity post2) {
+		this.postEntity = post2;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Donor getDonor() {
+		return donor;
+	}
+
+	public void setDonor(Donor donor) {
+		this.donor = donor;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	
+
+}

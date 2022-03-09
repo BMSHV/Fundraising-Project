@@ -1,0 +1,57 @@
+package com.springboot.sprint1.controller;
+
+/*import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;*/
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.springboot.sprint1.model.AllDetails;
+import com.springboot.sprint1.model.Post;
+import com.springboot.sprint1.service.PostService;
+
+@RestController
+@RequestMapping("/post")
+public class PostController {
+	
+	//private static final Logger logger = LoggerFactory.getLogger(PostController.class);
+	
+	@Autowired
+	private PostService postService;
+	
+	@PostMapping("/create")
+	public ResponseEntity<Post> createPost(@RequestBody Post post) {
+		//logger.debug("");
+		Post newPost = postService.createPost(post);
+		ResponseEntity<Post> responseEntity = new ResponseEntity<>(newPost,HttpStatus.CREATED);
+		return responseEntity;
+				
+	}
+	
+	@DeleteMapping("/delete/{uid}")
+	public ResponseEntity<?> deletePost(@PathVariable("uid") int userId) {
+		postService.deletePost(userId);
+		return new ResponseEntity<>("Post Deleted with id: "+userId, HttpStatus.OK);
+	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<Post> updatePost(@RequestBody Post post) {
+		Post updatedPost = postService.updatePost(post);
+		return new ResponseEntity<>(updatedPost, HttpStatus.OK);
+	}	
+	
+	@GetMapping("/get/{uid}")
+	public ResponseEntity<?> fetchProductDetails(@PathVariable("uid") int postId) {
+		AllDetails post = postService.getPostById(postId);
+		return new ResponseEntity<>(post, HttpStatus.OK);
+	}
+
+}
